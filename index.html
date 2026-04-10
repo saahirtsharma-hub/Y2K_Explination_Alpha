@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Y2K: The Millennium Bug & Aesthetic</title>
+    <style>
+        /* CSS: Y2K STYLING */
+        :root {
+            --neon-pink: #ff00ff;
+            --electric-blue: #00ffff;
+            --cyber-purple: #2b0057;
+            --glass-bg: rgba(255, 255, 255, 0.15);
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 0;
+            border-bottom: 2px dashed var(--electric-blue);
+        }
+
+        h1 {
+            font-size: 4rem;
+            text-transform: uppercase;
+            letter-spacing: 10px;
+            color: var(--neon-pink);
+            text-shadow: 3px 3px var(--electric-blue);
+            animation: glitch 1s infinite;
+        }
+
+        .panel {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 2px solid var(--electric-blue);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 0 15px var(--electric-blue);
+        }
+
+        .btn {
+            background: var(--neon-pink);
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 5px 5px 0 var(--electric-blue);
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 8px 8px 0 var(--electric-blue);
+        }
+
+        @keyframes glitch {
+            0% { transform: skew(2deg); }
+            50% { transform: skew(-2deg); }
+            100% { transform: skew(2deg); }
+        }
+
+        footer { text-align: center; font-size: 0.8rem; margin-top: 50px; opacity: 0.7; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Y2K</h1>
+            <p>Retro-Futurism & The Millennium Bug</p>
+        </header>
+
+        <section class="panel">
+            <h2>The Millennium Bug</h2>
+            <p>Originally, **Y2K** stood for the "Year 2000 Problem." Computer programmers in the 20th century often used two-digit codes for years (e.g., "99" for 1999) to save memory. There was a global fear that when the clock struck midnight on Jan 1, 2000, computers would interpret "00" as 1900, causing global chaos.</p>
+            <button class="btn" onclick="checkCompliance()">Test Y2K Compliance</button>
+            <p id="testResult" style="margin-top:15px; color:var(--electric-blue);"></p>
+        </section>
+
+        <section class="panel">
+            <h2>The Aesthetic</h2>
+            <p>Today, Y2K refers to a specific visual style (1998–2003). It celebrates:</p>
+            <ul>
+                <li><strong>Clear Tech:</strong> Translucent electronics like the iMac G3.</li>
+                <li><strong>Cyber Graphics:</strong> Neon gradients, 3D blobs, and metallic textures.</li>
+                <li><strong>Optimism:</strong> A bright, tech-positive view of the future.</li>
+            </ul>
+        </section>
+
+        <footer>
+            <p>Projected 2000 &copy; Modern Nostalgia Systems</p>
+        </footer>
+    </div>
+
+    <script>
+        /* JAVASCRIPT: INTERACTIVITY */
+        function checkCompliance() {
+            const result = document.getElementById('testResult');
+            result.innerText = "System Scanning...";
+            
+            setTimeout(() => {
+                const year = new Date().getFullYear();
+                if (year >= 2000) {
+                    result.innerHTML = "STATUS: <strong>Y2K COMPLIANT</strong>. The world did not end!";
+                } else {
+                    result.innerText = "WARNING: System Error. Is it 1999?";
+                }
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
